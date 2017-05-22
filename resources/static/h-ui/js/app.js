@@ -22,7 +22,19 @@ $(function(){
 	$(".pt-page").eq(0).addClass( 'pt-page-current' );
 	var artnumber = $("#v1").children(".art-info-box").length;
 	$("#viewsWrapper").css({"height":(artnumber*200)+"px"});
-	$(".article-list-body").css({"height":((artnumber*200)+110)+"px"})
+	$(".article-list-body").css({"height":((artnumber*200)+110)+"px"});
+	$(".btn-down").off().on("click",function(){
+		$mc.scrollbottom();
+	});
+	var $container = $('#masonry');
+    $container.imagesLoaded(function() {
+        $container.masonry({
+                itemSelector: '.box-w',
+                gutter: 20,
+                isAnimated: true,
+            });
+     });
+     $mc.boxHover();
 })
 function bgimg(){
 	var h = document.documentElement.clientHeight;
@@ -66,6 +78,28 @@ var $mc ={
 			$(this).find("a").animate({
 				width:"0%"
 			},200)
+		})
+	},
+	scrollbottom:function(){
+		
+        $("html,body").animate({scrollTop:$(document).height()},30000);
+        $("html,body").click(function(){
+        	 $("html,body").shop(true);
+        });
+	},
+	boxHover:function(){
+		$(".box-w").hover(function(){
+			 var obj = $(this);
+			 var h = obj.height();
+			 var w = obj.width();
+			 obj.find(".sub-box-w").css({"width":"100%"}).animate({
+                  height:h+"px"
+			 })
+		},function(){
+			 var obj = $(this);
+			 obj.find(".sub-box-w").animate({
+                  height:"0px"
+			 })
 		})
 	}
 }

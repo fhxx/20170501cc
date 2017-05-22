@@ -20,7 +20,9 @@
 .mt-55{
 	margin-top: 55px;
 }
-
+.mt-100{
+	margin-top: 100px;
+}
 body{
 	font-family: "微软雅黑"; font-size: 62.5%;
 }
@@ -126,14 +128,15 @@ a{blr:expression(this.onFocus=this.blur());outline:none;}
 .art-info-box .art .box  .rr-box img{
 	width: 200px; height: 120px; border-radius: 10px;
 }
-.timer-box{
-	height: 220px; 
-}
+
 .timer-box .timer-l-box{
-	width: 120px;border-right: 3px solid #ccc;
+	width: 120px; 
+}
+.h-line{
+	height: 500px; width: 3px; background: #ccc; left: 117px;
 }
 .timer-box .timer-r-box .text-box{
-	 margin-left: 40px; height: 180px; background: #fafafa; border-radius: 10px;
+	 margin-left: 40px; min-height: 100px; max-height: 180px; background: #fafafa; border-radius: 10px;
 }
 .sub-time-box{
 	left: -100px; top: 30px; font-size: 1.5em; color:#666;
@@ -145,9 +148,40 @@ a{blr:expression(this.onFocus=this.blur());outline:none;}
 	width: 14px; height: 14px; margin: 3px; border-radius: 10px; background: #87CEEB; display: inline-block;
 }
 .years-box{
-	width: 100px; height: 100px; border-radius: 60px; background: #eee;
+	width: 100px; height: 100px; border-radius: 60px; background: #eee; top: -100px;	
 }
 .years-box span{
-	width: 90px; height: 90px;line-height: 90px;font-size: 2.2em;  border-radius: 50px; background:#87CEEB ; color: #fff; display: inline-block; margin: 5px;
+	width: 90px; height: 90px; -webkit-transition: -webkit-transform 2s; cursor: pointer; line-height: 90px;font-size: 2.2em; font-weight: bold;  border-radius: 50px; background:#87CEEB ; color: #fff; display: inline-block; margin: 5px;
 } 
+.years-box span:hover{
+	-webkit-transform: rotate(360deg);
+}
+.sub-arrow-box{
+	width: 20px; height: 30px; background: url(../images/project/left-l.png) no-repeat;  background-size: 100% 100%; left: -10px; top: 25px
+}
+.sub-text-box{
+	width: 90%; margin-left: 5%;  margin-top: 10px; position: relative;	 margin-bottom: 10px; font-size: 1.3em; color: #666; max-height: 160px; overflow:hidden;
+}
+.container-fluid {
+  padding: 20px;
+  }
+.box-w {
+  margin-bottom: 20px;
+  float: left;
+  border-radius: 10px;
+  width: 30%;	
+}
+.box-w img {
+  	width: 100%;border-radius:10px;
+}
+.sub-box-w{
+	background: #000; opacity: 0.7; color: #fff;  position: absolute; top: 0px;overflow:hidden; height: 0px;border-radius:10px;
+}
+.sub-text-box-w{
+	width: 100%; margin-top: 45%; margin-left: 10px; 
+}
+.sub-text-box-w span{
+	display:inline-block; width: 100%; color: #fff; font-size: 16px;
+}
+
 	
