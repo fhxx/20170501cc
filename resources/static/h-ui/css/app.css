@@ -1,6 +1,6 @@
 @charset "utf-8";
 .w100{
-	width: 100%;
+	width: 100%; 
 }
 .w95{
 	width: 95%;
@@ -66,6 +66,9 @@ a{blr:expression(this.onFocus=this.blur());outline:none;}
 }
 .article-list-box .title ul li a{
    height: 2px; background: #999; width: 0%; margin-left: 50%; display: inline-block; float: left;
+}
+.article-list-box .title ul .active a{
+   height: 2px; background: #999; width: 100%; margin-left: 0%; display: inline-block; float: left;
 }
 .article-list{
 	height: 300px;
@@ -147,13 +150,13 @@ a{blr:expression(this.onFocus=this.blur());outline:none;}
 .sub-print-box span{
 	width: 14px; height: 14px; margin: 3px; border-radius: 10px; background: #87CEEB; display: inline-block;
 }
-.years-box{
+.{
 	width: 100px; height: 100px; border-radius: 60px; background: #eee; top: -100px;	
 }
-.years-box span{
+. span{
 	width: 90px; height: 90px; -webkit-transition: -webkit-transform 2s; cursor: pointer; line-height: 90px;font-size: 2.2em; font-weight: bold;  border-radius: 50px; background:#87CEEB ; color: #fff; display: inline-block; margin: 5px;
 } 
-.years-box span:hover{
+. span:hover{
 	-webkit-transform: rotate(360deg);
 }
 .sub-arrow-box{
@@ -184,4 +187,12 @@ a{blr:expression(this.onFocus=this.blur());outline:none;}
 	display:inline-block; width: 100%; color: #fff; font-size: 16px;
 }
 
-	
+.art-box{
+	 width: 0px; background: #fff; z-index: 10; overflow-x: hidden; top: 0px; right: 0px;
+}
+.close-info{
+	  font-size: 30px; color: #fff; position: absolute; top: -10px; left: -30px; width: 30px; height: 30px;  display: none;
+}
+.close-info i:hover{
+	-webkit-transform: rotate(360deg); cursor: pointer;
+}

@@ -54,6 +54,9 @@ function bgimg(){
 
 var $mc ={
 	hoverTitle:function(){
+		
+	
+		
 		$(".article-list-box>.title>ul>li").hover(function(){
 			$(this).find("a").animate({
 				width:"100%",
@@ -67,7 +70,11 @@ var $mc ={
 		}).click(function(){
 			var page = $(this).data("page");
 			changeView(page);
+		
 		})
+		
+		
+		
 	},
 	hoverArtTitle:function(){
 		$(".art-info-box>.title").hover(function(){
@@ -78,13 +85,17 @@ var $mc ={
 			$(this).find("a").animate({
 				width:"0%"
 			},200)
+		}).click(function(){
+			   showbg();
+			   getArt();
 		})
 	},
 	scrollbottom:function(){
 		
         $("html,body").animate({scrollTop:$(document).height()},30000);
         $("html,body").click(function(){
-        	 $("html,body").shop(true);
+        	      
+        	      $("html,body").shop(true,true);
         });
 	},
 	boxHover:function(){
@@ -129,4 +140,38 @@ function Times(){
 	 	if(str>9) return str;
 	 	else return "0"+str;
 	 }
+}
+
+function showbg(){
+	   var w = $(window).width();
+	   var h = $(window).height()
+	   $("body").append('<div id="bg" style="background: #000; opacity: 0.7; width: '+w+'px; height:'+h+'px; position: fixed; top: 0px; left:0px;z-index:9"></div>')
+}
+
+function getArt(){
+	    var h = $(window).height();
+	    $(document.body).css({
+		   "overflow-x":"hidden",
+		   "overflow-y":"hidden"
+		 });
+	    $(".art-box").css({"height":h+"px","overflow-y":"auto"}).animate({
+	    	     width:"800px"
+	    },150,function(){
+	    	     $(".close-info").show();
+	    });
+	    
+	    $(".close-info").off().on("click",function(){
+	    	      $(".art-box").css({"height":h+"px","overflow-y":"auto"}).animate({
+			    	     width:"0px"
+			    },150,function(){
+			    	     $(document.body).css({
+					   "overflow-x":"hidden",
+					   "overflow-y":"auto"
+					 });
+					 $(".close-info").hide();
+			    	     $("#bg").remove();
+			    });
+	    	     
+	    })
+	    
 }
